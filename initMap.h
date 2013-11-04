@@ -1,0 +1,1 @@
+void initMap(int map[20][20]);

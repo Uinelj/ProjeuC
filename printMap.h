@@ -1,0 +1,1 @@
+void printMap(int map[19][19], int pos);
