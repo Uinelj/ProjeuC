@@ -1,1 +1,1 @@
-int move(int pos[2], int map[20][20]);
+int move(int pos[2]/*int map[20][20]*/);
