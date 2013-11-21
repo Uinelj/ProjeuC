@@ -1,0 +1,1 @@
+void printDialog(int dialog);
