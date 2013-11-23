@@ -1,1 +1,1 @@
-void event(int pos[2],int map[20][20], int clip[9], int data[5]);
+void event(int pos[2],int map[20][20], int clip[9],int mapNumber[1], int data[5]);

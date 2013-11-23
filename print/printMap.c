@@ -12,7 +12,7 @@ void printMap(int map[20][20], int pos[2]){
 			else{
 				switch(map[x][y]){
 					case 0: //Herbe
-						printf("\033[01;32m,\033[0m ");
+						printf("\033[01;37m_\033[0m ");
 						break;
 					case 1: //Fleurs
 						printf("\033[00;31m*\033[0m ");

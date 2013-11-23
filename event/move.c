@@ -4,10 +4,9 @@ int move(int pos[2], int map[20][20], int clip[9]){
 	char dir;
 	printf("Choisis une direction :\n");
 	scanf("%c", &dir);
-	// Si pos[0]=map[]
 	switch(dir){
 		case 'z':
-			if(clip[map[pos[0]-1][pos[1]]]==0){
+			if(clip[map[pos[0]-1][pos[1]]]==0){ //Si la case n'est pas clippée on peut passer.
 			pos[0]--;
 			}
 			break;	

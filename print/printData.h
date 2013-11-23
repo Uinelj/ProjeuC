@@ -1,1 +1,1 @@
-void printData(int data[5]);
+void printData(int data[5], int pos[2]);
