@@ -1,1 +1,1 @@
-void printDialog(int dialog);
+void printDialog(int dialog[1], int fullscreen);

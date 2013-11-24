@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "initMap.h"
 // Cette fonction gère tout ce qui est relatif à des évènements dans le jeu.
-void event(int pos[2],int map[20][20],int clip[9], int mapNumber[1], int data[5]){
+void event(int pos[2],int map[20][20],int clip[9], int mapNumber[1], int dialogNumber[1], int data[5]){
 	int requiredXP[5];
 	requiredXP[1] = 50; //faire avec une suite. 
 	requiredXP[2] = 70;
@@ -19,7 +19,7 @@ void event(int pos[2],int map[20][20],int clip[9], int mapNumber[1], int data[5]
 		if(map[pos[0]][pos[1]]==8){
 			data[3]+=50;
 		}
-		map[pos[0]][pos[1]]=0;
+		map[pos[0]][pos[1]]=1;
 	}
 	//Clé
 	else if(map[pos[0]][pos[1]]==4){
@@ -47,7 +47,7 @@ void event(int pos[2],int map[20][20],int clip[9], int mapNumber[1], int data[5]
 	4 5 6
 	7 8 9
 	On passe latéralement en ajoutant(enlevant) 1, et de haut en bas on ajoute/enlève 3. 
-	Ainsi, en étant en map 5, on se dirige vers le bas, on arrive en map (5+3)=8.
+	Ainsi, en étant en map 5 par exemple, on se dirige vers le bas, on arrive en map (5+3)=8.
 	Ici on retranche 5 car l'univers exploitable fait 5x5 maps.
 	*/
 	if(pos[1]==0){
@@ -70,5 +70,19 @@ void event(int pos[2],int map[20][20],int clip[9], int mapNumber[1], int data[5]
 		initMap(map, clip, mapNumber);
 		pos[0]=1;
 	}
-
+	/*Events : map 1
+		Faire pop des zombies si on s'approche trop du vieil homme.
+	*/
+	if(mapNumber[0]==1){
+		dialogNumber[0]=1;
+		if(pos[0]>=15){
+			dialogNumber[0]=3;
+			map[3][5] = 8;
+			map[4][4] = 8;
+			}
+	}
+	//Events : map 2
+	if(mapNumber[0]==2){
+		dialogNumber[0]=2;
+	}
 }

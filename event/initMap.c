@@ -8,6 +8,7 @@ int initMap(int map[20][20],int clip[9], int mapNumber[1]){
 	clip[2]=1; //Cases impossibles a traverser
 	clip[3]=1;
 	clip[6]=1;
+	clip[9]=1;
 	FILE* fichier = NULL; //On charge la map.
 	int caract = 0;
 	int x, y;

@@ -20,16 +20,17 @@ int main(){
 	data[4]=0; //Clé
 	int clip[9]={0}; //Array qui te dit si c'est clip ou pas.
 	int map[20][20]; //Map active du personnage.
-	int mapNumber[1]={3};
+	int mapNumber[1]={2}; // Numéro de la map.
+	int dialogNumber[1]={2}; //Numéro du texte a afficher.
 	system("clear");
 	/* -------------------------*/
 	initMap(map, clip, mapNumber);
 	while(1){
 		printData(data, pos);
 		printMap(map, pos);
-		printDialog(1);	
+		printDialog(dialogNumber, 0); // 1= Fullscreen, 0 (Plutôt à l'event de gérer le texte ?)
 		move(pos, map, clip); /* --Commentaire en mémoire de la SegFault due à ma bêtise. Puisses-tu reposer en paix.(Merci madame, merci Bastien !)-- */
-		event(pos, map, clip, mapNumber, data);
+		event(pos, map, clip, mapNumber, dialogNumber, data);
 		system("clear");
 	}
 	return 0;

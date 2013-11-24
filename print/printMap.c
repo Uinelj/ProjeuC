@@ -11,14 +11,14 @@ void printMap(int map[20][20], int pos[2]){
 			}
 			else{
 				switch(map[x][y]){
-					case 0: //Herbe
+					case 0: //Sol
 						printf("\033[01;37m_\033[0m ");
 						break;
-					case 1: //Fleurs
-						printf("\033[00;31m*\033[0m ");
+					case 1: //Déchets
+						printf("\033[00;35m~\033[0m ");
 						break;
-					case 2: //Arbres
-						printf("\033[00;33mY\033[0m ");
+					case 2: //Meubles
+						printf("\033[00;33mπ\033[0m ");
 						break;
 					case 3: //Roche
 						printf("\033[00;37mø\033[0m ");
@@ -29,14 +29,17 @@ void printMap(int map[20][20], int pos[2]){
 					case 5: //PO
 						printf("\033[01;33m0\033[0m ");
 						break;
-					case 6: //Cadenas
+					case 6: //Porte Verouillée
 						printf("\033[01;32mQ\033[0m ");
 						break;
 					case 7: //Piège
-						printf("\033[00;35m#\033[0m ");
+						printf("\033[00;35m_\033[0m ");
 						break;
-					case 8://Monstre
-						printf("\033[01;31m&\033[0m ");
+					case 8://PNJ Hostile
+						printf("\033[01;31mX\033[0m ");
+						break;
+					case 9://PNJ
+						printf("\033[00;33mX\033[0m ");
 						break;
 				}
 			}
